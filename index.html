@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yummy - Mohamed Essam Ahmed</title>
+
+  <link rel="stylesheet" href="./css/animate.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+</head>
+
+<body class="bg-dark overflow-hidden">
+
+  <div class="loading bg-black flex-center fixed-full z-999">
+    <div class="loading-icon flex-center flex-column animate__animated animate__bounceInRight">
+      <span class="loader"></span>
+      <div class="spinner">
+        <div class="dot1">O.</div>
+        <div class="dot2">o.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <nav class="d-flex align-items-center">
+
+    <div class="nav-contain d-flex flex-column justify-content-between align-items-center">
+      <ul>
+        <li class="navItem pointer"><a onclick="closeNav(); clearUp(); getMealByName('');">Home</a></li>
+        <li class="navItem pointer"><a onclick="getSearchPage()">Search</a></li>
+        <li class="navItem pointer"><a onclick="getCategories()">Categories</a></li>
+        <li class="navItem pointer"><a onclick="getAreas()">Area</a></li>
+        <li class="navItem pointer"><a onclick="getIngredients()">Ingredients</a></li>
+        <li class="navItem pointer"><a onclick="getContactUs()">Contact us</a></li>
+      </ul>
+      <div class="nav-footer">
+        <div class="icons">
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+          <a href=""><i class="fa-solid fa-globe"></i></a>
+        </div>
+        <p>Copyright © 2024 <br> All Rights Reserved.</p>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <img src="./images/logo.png" class="w-100 mt-3 px-1" alt="logo">
+      <i id="navToggle" class="toggleIcon fa-solid fa-bars fs-5"></i>
+      <div class="d-flex flex-column gap-2 mb-3">
+        <a href=""><i class="fa-solid fa-globe"></i></a>
+        <a href=""><i class="fa-solid fa-share-nodes"></i></a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="min-vh-100 position-relative">
+
+    <div class="container px-5 px-lg-0" id="activityContainer">
+
+    </div>
+
+    <div class="container px-5 px-lg-0" id="BackContainer">
+
+    </div>
+
+    <div class="w-100 position-relative pt-3">
+      <div class="inner-loading flex-center rounded-4 absolute-full h-vh-100 z-1 flashing">
+        <div class="loading-icon flex-center flex-column">
+          <span class="loader"></span>
+          <div class="spinner">
+            <div class="dot1">O.</div>
+            <div class="dot2">o.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-5 px-lg-0 position-relative pt-3">
+
+      <div class="row g-4 px-5 px-lg-0" id="itemsContainer">
+
+      </div>
+
+      <div id="mealModal" class="modal hide fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+          <div class="modal-content bg-transparent text-white border-0">
+            <div class="modal-header border-0">
+              <button type="button" class="btn-close flex-center bg-white" data-bs-dismiss="modal" aria-label="Close"><i
+                  class="fa-solid fa-xmark text-danger fs-3"></i></button>
+            </div>
+            <div class="modal-body bg-dark rounded-4 rounded-end-0 p-5">
+              <div class="container">
+                <div class="row" id="detailsContainer">
+                  
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+
+
+
+
+
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

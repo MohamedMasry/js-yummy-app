@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+}
+
+i {
+  transition-duration: 0s;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed-full {
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.absolute-full {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.h-vh-100 {
+  height: 100vh
+}
+
+.z-999 {
+  z-index: 999;
+}
+
+
+/* ----------------- Loading screen ------------------- */
+
+.loader {
+  position: relative;
+  width: 120px;
+  height: 14px;
+  border-radius: 0 0 15px 15px;
+  background-color: #3e494d;
+  box-shadow: 0 -1px 4px #5d6063 inset;
+  animation: panex 0.5s linear alternate infinite;
+  transform-origin: 170px 0;
+  z-index: 10;
+  perspective: 300px;
+
+}
+.loader::before {
+content: '';
+position: absolute;
+left: calc( 100% - 2px);
+top: 0;
+z-index: -2;
+height: 10px;
+width: 70px;
+border-radius: 0 4px 4px 0;
+background-repeat: no-repeat;
+background-image: linear-gradient(#6c4924, #4b2d21), linear-gradient(#4d5457 24px, transparent 0), linear-gradient(#9f9e9e 24px, transparent 0);
+background-size: 50px 10px , 4px 8px , 24px 4px;
+background-position: right center , 17px center , 0px center;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: -2;
+  transform: translate(-50% , -20px) rotate3d(75, -2, 3, 78deg);
+  width: 55px;
+  height: 53px;
+  background: #fff;
+  background-image:
+  radial-gradient(circle 3px , #fff6 90%, transparent 10%),
+  radial-gradient(circle 12px , #ffc400 90%, transparent 10%),
+  radial-gradient(circle 12px , #ffae00 100%, transparent 0);
+  background-repeat: no-repeat;
+  background-position: -4px -6px , -2px -2px , -1px -1px;
+  box-shadow: -2px -3px #0002 inset, 0 0 4px #0003 inset;
+  border-radius: 47% 36% 50% 50% / 49% 45% 42% 44%;
+  animation: eggRst 1s ease-out infinite;
+}
+
+@keyframes eggRst {
+0% ,  100%{  transform: translate(-50%, -20px) rotate3d(90, 0, 0, 90deg); opacity: 0; }
+10% , 90% {  transform: translate(-50%, -30px) rotate3d(90, 0, 0, 90deg); opacity: 1; }
+25%  {transform:  translate(-50% , -40px) rotate3d(85, 17, 2, 70deg) }
+75% {transform:  translate(-50% , -40px) rotate3d(75, -3, 2, 70deg) }
+50% {transform:  translate(-55% , -50px) rotate3d(75, -8, 3, 50deg) }
+}
+@keyframes panex {
+0%{  transform: rotate(-5deg)  }
+100%{  transform: rotate(10deg)  }
+}
+
+
+.spinner {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  
+  -webkit-animation: sk-rotate 2.0s infinite linear;
+  animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #ffb223;
+  border-radius: 100%;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+.flashing {
+	animation: flashing 2s infinite both;
+}
+
+@keyframes flashing {
+  0%,
+  50%,
+  100% {
+    background-color: #212529;
+  }
+  25%,
+  75% {
+    background-color: #212529f8;
+  }
+}
+
+/* ----------------- Navbar section ------------------- */
+
+nav {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.sidebar:hover {
+  box-shadow: 0px 0px 10px #000 inset;
+}
+
+.sidebar:active{
+  box-shadow: 0px 0px 20px #000 inset;
+}
+.sidebar {
+  width: 50px;
+  height: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navToggle {
+  cursor: pointer;
+  padding: 100px 20px;
+}
+
+.nav-contain {
+  height: 100%;
+  width: 0px;
+  color: white;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nav-contain ul {
+  padding: 20px 10px;
+}
+
+.navItem a {
+  color: white;
+  padding: 5px 5px;
+  margin: 20px 0;
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-contain ul a:hover {
+  text-shadow: 0 0 10px white;
+  transform: translateY(-10px) scale(1.2);
+}
+
+.nav-footer {
+  color: white;
+  text-align: left;
+  font-size: 13px;
+  padding: 0 10px;
+}
+
+.nav-footer .icons i {
+  color: white;
+}
+
+.focus-in {
+  animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.blur-out {
+  animation: blur-out-contract 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes blur-out-contract {
+  0% {
+    filter: blur(0.01);
+  }
+  100% {
+    letter-spacing: -0.5em;
+    filter: blur(12px) opacity(0%);
+  }
+}
+
+/* ----------------- Main section ------------------- */
+
+.pointer {
+  cursor: pointer;
+}
+
+.modal {
+  --bs-modal-width: 75%;
+}
+
+.meal-layer{
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.meal-img:hover .meal-layer{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.areas-div {
+  background-color: transparent;
+  transition: 0.3s;
+  border-radius: 20px 0 20px 0;
+  transform: scale(1);
+}
+
+.areas-div:hover {
+  background-color: white;
+  color: black !important;
+  animation: pulsate-fwd 1s ease-in-out infinite both;
+}
+
+@keyframes pulsate-fwd {
+  0% {
+      transform: scale(1);
+  }
+
+  50% {
+      transform: scale(1.05);
+  }
+
+  100% {
+      transform: scale(1);
+  }
+}
+
+  /* ----------------- Contact section ------------------- */
+
+  .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(131, 236, 255, 0.25);
+    border-color: rgb(97, 222, 236);
+  }
