@@ -23,7 +23,7 @@ $(async function () {
 function openNav() {
     $("body").animate({ marginLeft: "150px" }, 500);
     $(".nav-contain").animate({ width: "150px" }, 500);
-    $("#navToggle i.toggleIcon").addClass("fa-times");
+    $("i.toggleIcon").addClass("fa-times");
     $(".navItem a").addClass("focus-in");
     setTimeout(function () {
         $(".navItem a").removeClass("focus-in");
@@ -33,7 +33,7 @@ function openNav() {
 function closeNav() {
     $("body").animate({ marginLeft: "0" }, 500);
     $(".nav-contain").animate({ width: "0" }, 500);
-    $("#navToggle i.toggleIcon").removeClass("fa-times");
+    $("i.toggleIcon").removeClass("fa-times");
     $(".navItem a").addClass("blur-out");
     setTimeout(function () {
         $(".navItem a").removeClass("blur-out");
